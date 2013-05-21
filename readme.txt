@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: luiscmas
-Donate link: http://example.com/
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YNLC5HS5EBW2S
 Tags: shortcode, conditional donation result
 Requires at least: 3.0.1
 Tested up to: 3.5.1

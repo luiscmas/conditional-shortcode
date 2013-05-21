@@ -19,10 +19,10 @@ License: GPL2
 */
 function shortcode_gracias($atts) {
 	extract(shortcode_atts(array(
-	    'texto0' => false,
-		'texto1' => 'Definir texto del primer valor con la clave texto1',
-		'texto2' => 'Definir texto del segundo valor con la clave texto2',
-		'texto3' => 'Definir texto del tercer valor con la clave texto3',
+		'texto0' => false,
+		'texto1' => esc_html__('Definir texto del primer valor con la clave texto1','conditional-shortcode'),
+		'texto2' => esc_html__('Definir texto del segundo valor con la clave texto2','conditional-shortcode'),
+		'texto3' => esc_html__('Definir texto del tercer valor con la clave texto3','conditional-shortcode'),
 		'importe1' => 20,
 		'importe2' => 30,
 		'importe3' => 40,
@@ -36,13 +36,12 @@ function shortcode_gracias($atts) {
 	if ($importe < $importe1 and $texto0) {
 		echo $texto0;
 	} elseif ($importe >= $importe1 and $importe < $importe2) {
-        echo $texto1;
-    } elseif ($importe >= $importe2 and $importe < $importe3) {
-        echo $texto2;
-    } else {
-		echo $texto3;
-	}
+		echo $texto1;
+	} elseif ($importe >= $importe2 and $importe < $importe3) {
+    	echo $texto2;
+    } elseif ($importe >= $importe3) {
+    	echo $texto3;
+    }
 }
 add_shortcode('gracias_por_donar', 'shortcode_gracias');
-
 ?>

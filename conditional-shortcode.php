@@ -44,4 +44,5 @@ function shortcode_gracias($atts) {
     }
 }
 add_shortcode('gracias_por_donar', 'shortcode_gracias');
+
 ?>

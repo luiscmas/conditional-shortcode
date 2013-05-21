@@ -10,13 +10,13 @@ Text Domain: conditional-shortocode
 Domain Path: /languages
 License: GPL2
 */
-	/**
-	 * Shortcode: gracias_por_donar
-	 *
-	 * @param array $atts Shortcode attributes
-	 * @return string Output html depending on value of amt request parameter
-	 */
-
+	
+/**
+* Shortcode: gracias_por_donar
+*
+* @param array $atts Shortcode attributes
+* @return string Output html depending on value of amt request parameter
+*/
 function shortcode_gracias($atts) {
 	extract(shortcode_atts(array(
 	    'texto0' => false,

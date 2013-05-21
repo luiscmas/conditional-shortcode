@@ -3,8 +3,8 @@ conditional-shortcode
 Wordpress plugin. Adds a shortcode that retrieves a text depending on an integer parameter passed as a request
 
 Shortcode attributes: 
-- texto0, texto1, texto2, texto3 are text text to print
-- importe1, importe2, importe3 are the integers that 
+- texto0, texto1, texto2, texto3 are texts to print
+- importe1, importe2, importe3 are integers that 
 - get is the name of the request parameter that can be passed as post or get
 
 usage 

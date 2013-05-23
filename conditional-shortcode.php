@@ -17,31 +17,31 @@ License: GPL2
 * @param array $atts Shortcode attributes
 * @return string Output html depending on value of amt request parameter
 */
-function shortcode_gracias($atts) {
+function conditional_shortcode($atts) {
 	extract(shortcode_atts(array(
-		'texto0' => false,
-		'texto1' => esc_html__('Definir texto del primer valor con la clave texto1','conditional-shortcode'),
-		'texto2' => esc_html__('Definir texto del segundo valor con la clave texto2','conditional-shortcode'),
-		'texto3' => esc_html__('Definir texto del tercer valor con la clave texto3','conditional-shortcode'),
-		'importe1' => 20,
-		'importe2' => 30,
-		'importe3' => 40,
+		'text0' => false,
+		'text1' => esc_html__('Definir texto del primer valor con la clave text1','conditional-shortcode'),
+		'text2' => esc_html__('Definir texto del segundo valor con la clave text2','conditional-shortcode'),
+		'text3' => esc_html__('Definir texto del tercer valor con la clave text3','conditional-shortcode'),
+		'range1' => 0,
+		'range2' => 0,
+		'range3' => 0,
 		'get' => 'amt'
 	), $atts));
-	$importe = floatval(($_REQUEST[$get]));
-	$importe1 = intval($importe1);
-	$importe2 = intval($importe2);
-	$importe3 = intval($importe3);
+	$qty = floatval($_REQUEST[$get]);
+	$range1 = intval($range1);
+	$range2 = intval($range2);
+	$range3 = intval($range3);
 	
-	if ($importe < $importe1 and $texto0) {
-		echo $texto0;
-	} elseif ($importe >= $importe1 and $importe < $importe2) {
-		echo $texto1;
-	} elseif ($importe >= $importe2 and $importe < $importe3) {
-    	echo $texto2;
-    } elseif ($importe >= $importe3) {
-    	echo $texto3;
+	if ($qty < $range1 and $text0) {
+		echo $text0;
+	} elseif ($qty >= $range1 and $qty < $range2) {
+		echo $text1;
+	} elseif ($qty >= $range2 and $qty < $range3) {
+    	echo $text2;
+    } elseif ($qty >= $range3) {
+    	echo $text3;
     }
 }
-add_shortcode('gracias_por_donar', 'shortcode_gracias');
+add_shortcode('gracias_por_donar', 'conditional_shortcode');
 ?>
